@@ -71,4 +71,17 @@ h5::-webkit-scrollbar {
 .book {
     background-color:rgb(217, 197, 241);
 }
+
+
+@media (max-width: 480px) {
+    .card {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
+@media (max-width: 992px) {
+    .col-md-10 {
+        justify-content: space-evenly;
+    }
+}
 /* ++++++++++++++++++ Card finished ++++++++++++++++++ */

@@ -27,3 +27,21 @@ label {
     cursor: pointer;
     padding: 0.2rem 1rem 0.2rem 1rem;
 }
+
+@media (max-width: 770px) {
+    form {
+        margin-bottom: 1rem;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    .sections {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+    label {
+        margin-right: 0.5rem;
+    }
+}

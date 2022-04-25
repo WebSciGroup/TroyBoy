@@ -2,7 +2,9 @@
     font-weight: bold;
     margin-left: 1rem;
 }
+
 /* icons */
+@media (min-width: 992px) {
 #icon {
     position:absolute;
     right: 1rem;
@@ -14,19 +16,31 @@
     margin-right: 0.3rem;
 }
 
-#icon button {
+.nav-item button {
     background-color:rgb(187, 189, 30);
     color: white;
     border: none;
     border-radius: 0.25rem;
     margin-right: 1rem;
     font-weight: bold;
-    padding: 0 1.5rem 0 1.5rem;
+    /* padding: 0 1.5rem 0 1.5rem; */
 }
 
 #newListing {
     display: flex;
     flex-direction: column;
+}
+}
+@media (max-width: 1140px) {
+    #icon {
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #icon li {
+        margin-right:1rem;
+    }
 }
 
 /* new listing modal */
@@ -85,3 +99,6 @@ textarea {
     background-color: rgb(179, 184, 186);
 }
 
+::ng-deep ngb-modal-backdrop {
+    z-index: 1040 !important;
+}

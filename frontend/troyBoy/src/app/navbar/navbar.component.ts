@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
 import { HttpService } from '../http.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,6 +10,7 @@ import { HttpService } from '../http.service';
   providers: [NgbModalConfig, NgbModal]
 })
 export class NavbarComponent implements OnInit {
+  // public isMenuCollapsed = true;
   imgURL:any = "../../assets/placeholder-image.png";
   private uploadedFiles:any;
 
@@ -25,7 +27,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
  
   open(content:any) {
@@ -67,5 +68,6 @@ export class NavbarComponent implements OnInit {
       e.preventDefault();
       e.stopPropagation();
     })
+    alert("Your listing is created!");
   }
 }
