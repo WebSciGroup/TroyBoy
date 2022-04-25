@@ -1,0 +1,74 @@
+h5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h5::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+#items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* ++++++++++++++++++ Card ++++++++++++++++++ */
+.card {
+    width: 13rem;
+    height:26rem;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.card img {
+    width: 13rem;
+    height: 12rem;
+    object-fit:cover;
+}
+.card-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.detail {
+    text-align: center;
+}
+
+/* Tags */
+.tagsContainer {
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    font-size:0.85rem;
+}
+.tagsContainer p {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    border-radius: 9px;
+}
+.used {
+    background-color:rgb(190, 190, 231);
+    margin-right: 0.1rem;
+}
+.new {
+    background-color:rgb(172, 203, 242);
+    margin-right: 0.1rem;
+}
+.furniture {
+    background-color:rgb(195, 235, 214);
+}
+.electronic {
+    background-color:rgb(241, 237, 197);
+}
+.book {
+    background-color:rgb(217, 197, 241);
+}
+/* ++++++++++++++++++ Card finished ++++++++++++++++++ */

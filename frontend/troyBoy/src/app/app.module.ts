@@ -4,11 +4,21 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FilterComponent } from './filter/filter.component';
+import { HomeComponent } from './home/home.component';
+import { ItemComponent } from './item/item.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilterComponent,
+    HomeComponent,
+    ItemComponent,
+    NavbarComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

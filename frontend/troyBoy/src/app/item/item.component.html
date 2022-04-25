@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-4">
+            <img class="img-fluid" src="../../assets/{{content._id}}.{{content.imageFormat}}">
+        </div>
+        <div class="col-md-7">
+            <h3>{{content.title}}</h3>
+            <p class="description">{{content.description}}</p>
+            <div class="row" style="margin-top: 1rem;">
+                <div class="col-md-8">
+                    <p id="price">Price: <span>${{content.price}}</span></p>
+                    <p class="detail">Condition: <span>{{content.condition}}</span></p>
+                    <p class="detail">Category: <span>{{content.category}}</span></p>  
+                </div>
+                <div class="col-md-4" id="seller">
+                    <h5>Seller</h5>
+                    <p id="name">{{seller.firstName}} {{seller.lastName}}</p>
+                    <p>Items Sold: <span>{{seller.itemsSold.length}}</span></p>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="buy">Buy Now</button>
+            
+        </div>
+    </div>
+</div>
