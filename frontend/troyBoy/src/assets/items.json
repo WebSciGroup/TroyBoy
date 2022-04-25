@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6261ceffd5a885b75c75741a"
+  },
+  "title": "USED Home Office Computer Desk Writing Modern Simple Study Industrial Style",
+  "condition": "used",
+  "description": "USED ITEM! ALL FUNCTIONS WORK GREAT, NO RETURN, NO REFUND, ALL SALES ARE FINAL.",
+  "category": "furniture",
+  "price": 37.58,
+  "seller": "",
+  "imageFormat": "jpg"
+},{
+  "_id": {
+    "$oid": "6261ceffd5a885b75c75741b"
+  },
+  "title": "Mini Fridge 6 Liter AC/DC Portable Beauty Fridge Cooler and Warmer Mirror & LED",
+  "condition": "new",
+  "description": "",
+  "price": 20,
+  "seller": "",
+  "category": "furniture",
+  "imageFormat": "jpg"
+},{
+  "_id": {
+    "$oid": "6261ceffd5a885b75c75741c"
+  },
+  "title": "Lot of 2 Samsung S22E450 Series 21.5 inches Widescreen FHD Monitor With Cables",
+  "condition": "new",
+  "description": "",
+  "price": 37.58,
+  "seller": "",
+  "category": "electronic",
+  "imageFormat": "jpg"
+},{
+  "_id": {
+    "$oid": "6261ceffd5a885b75c75741d"
+  },
+  "title": "JBL Reflect Flow Waterproof True Wireless Bluetooth Sport Earbuds, Black",
+  "condition": "used",
+  "description": "",
+  "price": 37.58,
+  "seller": "",
+  "category": "electronic",
+  "imageFormat": "jpg"
+},{
+  "_id": {
+    "$oid": "6261ceffd5a885b75c75741e"
+  },
+  "title": "Sony WH-1000XM4 Wireless Noise-Cancelling Over-the-Ear Headphones - Black",
+  "condition": "new",
+  "description": "",
+  "price": 100.02,
+  "seller": "",
+  "category": "electronic",
+  "imageFormat": "jpg"
+},{
+  "_id": {
+    "$oid": "6261ceffd5a885b75c75741f"
+  },
+  "title": "Sony MDRZX110/BLK Stereo Headphones-Black",
+  "condition": "used",
+  "description": "",
+  "price": 66.66,
+  "seller": "",
+  "category": "electronic",
+  "imageFormat": "jpg"
+}]

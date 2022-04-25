@@ -1,0 +1,30 @@
+
+<app-searchbar (searchContent)="updateContent($event)"></app-searchbar>
+<div class="container" id="main">
+    <div class="row">
+        <div class="col-md-2">
+            <app-filter (getFilterContent)="updateContent($event)"></app-filter>
+        </div>
+        
+        <div class="col-md-10" id="items" *ngIf="content?.length > 0">
+            <div class="card" *ngFor="let i of content">
+                <img class="card-img-top" src="../../assets/{{i._id}}.{{i.imageFormat}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.title}}</h5>
+                    <div class="tagsContainer">
+                        <p class="{{i.condition}}">{{i.condition}}</p>
+                        <p class="{{i.category}}">{{i.category}}</p>
+                    </div>
+                    <p class="card-text">${{i.price}}</p>
+                    <div class="detail">
+                        <button class="btn btn-primary" (click)="itemDetail(i._id, i.seller)">View Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- No item found -->
+        <div class="col-md-10 d-flex align-items-center justify-content-center" *ngIf="content?.length == 0">
+            <h2 style="color:grey;">No item found.</h2>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+.navbar-brand {
+    font-weight: bold;
+    margin-left: 1rem;
+}
+/* icons */
+#icon {
+    position:absolute;
+    right: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#icon a {
+    margin-right: 0.3rem;
+}
+
+#icon button {
+    background-color:rgb(187, 189, 30);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#newListing {
+    display: flex;
+    flex-direction: column;
+}
+
+/* new listing modal */
+label {
+    font-weight: bold;
+}
+input[type="file"] {
+    display: none;
+}
+textarea {
+    resize:none;
+}
+#uploadImg {
+    margin: auto;
+}
+.modal-body img {
+    margin: auto;
+}
+#selection {
+    margin: 1rem 1rem 1rem 0;
+}
+#selection label {
+    margin-right: 0.5rem;
+}
+#selection select {
+    margin-right: 1rem;
+}
+/* Price */
+#priceDiv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+#priceDiv input {
+    border: none;
+    background-color: rgb(206, 211, 213);
+    padding: 0.3rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    border-radius: 0.25rem;
+    width: 5rem;
+}
+
+#description, #title {
+    border: none;
+    background-color: rgb(206, 211, 213);
+    width: 22rem;
+    height: 5rem;
+}
+#title {
+    height: 3rem;
+}
+#priceDiv input:focus, #description:focus, #title:focus {
+    outline: none;
+    background-color: rgb(179, 184, 186);
+}
+

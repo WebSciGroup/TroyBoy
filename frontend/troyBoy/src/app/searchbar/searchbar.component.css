@@ -1,0 +1,19 @@
+.input-group {
+    /* width: 70%;
+    margin: auto; */
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+form {
+    display:flex;
+    flex-direction: row;
+    margin: auto;
+    width: 70%;
+}
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn {
+    width: 4em;
+}

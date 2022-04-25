@@ -1,0 +1,49 @@
+
+p {
+    margin: 0;
+}
+
+span {
+    font-weight: bold;
+    font-size: 0.92rem;
+    text-transform: capitalize;
+    margin-left: 0.2rem;
+}
+.col-md-7 {
+    padding-left:3rem;
+}
+.description {
+    font-style: italic;
+}
+
+.container {
+    width: 70%;
+    margin-top: 3rem;
+}
+
+#price {
+    margin-bottom: 1rem;
+}
+#price span{
+    font-size: 1.5rem;
+}
+
+#buy {
+    background-color: rgb(97, 149, 197);
+    border: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    width: 10rem;
+}
+#buy:hover {
+    background-color: rgb(67, 102, 135);
+}
+/* Seller */
+#seller {
+    background-color: rgb(208, 221, 222);
+    padding: 0.8rem;
+}
+
+#name {
+    font-weight: bold;
+}

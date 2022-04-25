@@ -1,21 +1,31 @@
 const express = require('express');
 const app = express();
+const port= 3000;
 const bodyParser= require("body-parser");
-var http= require('http').Server(app);
-var https= require('https');
 const path= require('path');
-const {MongoClient}= require('mongodb');
-const { default: mongoose } = require('mongoose');
-const { ServerApiVersion } = require('mongodb');
-const uri= "mongodb+srv://troyboy:websci@cluster0.6dafd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-var assert= require('assert');
-const { callbackify } = require('util');
+app.use(bodyParser.json());
 
-const PORT= 3000;
-app.listen(
-    PORT,
-    ()=> console.log(`its alive on http://localhost:${PORT}`)
-)
+var jsonParser = bodyParser.json();
+
+const {MongoClient, ServerApiVersion}= require('mongodb');
+const { default: mongoose } = require('mongoose');
+const uri= "mongodb+srv://troyboy:websci@cluster0.6dafd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var ObjectId = require('mongodb').ObjectID;
+
+app.use(function (req, res, next) {
+
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}));
@@ -90,4 +100,142 @@ app.get('/create-user/:keyword', async(req, res)=>{
 // });
 
 
+// GET - Load all items 
+app.get('/db', async (req, res) => {
+    try {
+        await client.connect();
+        const collection = client.db("troyBoyDB").collection("items");
+        const cursor = await collection.find().toArray();
+        res.json(cursor);
+    } catch(e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+})
 
+// GET - Filter
+async function filterDB(condition, category) {
+    try {
+        await client.connect();
+        const collection = client.db("troyBoyDB").collection("items");
+        var query = "";
+        if (condition.length != 0 && category.length != 0) {
+            query = {$and: [{condition: {$in: condition}}, {category: {$in: category}}]};
+        } else if (condition.length == 0 ) {
+            query = {category: {$in: category}};
+        } else if (category.length == 0) {
+            query = {condition: {$in: condition}};
+        }
+        const cursor = await collection.find(query).toArray();
+        return cursor;
+    } catch(e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+} 
+app.get('/filter/:all', async (req,res) => {
+    const filters = JSON.parse(req.params.all);
+    const condition = filters[0];
+    const category = filters[1];
+    const response = await filterDB(condition, category);
+    console.log(response);
+    res.json(response);
+})
+
+
+// GET - Search key word
+async function searchKeyword(keyword) {
+    try {
+        await client.connect();
+        const collection = client.db("troyBoyDB").collection("items");
+        // collection.createIndex({title: "text"});
+        const query = {$text: {$search: keyword}};
+        const cursor = await collection.find(query).toArray();
+        return cursor;
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+app.get('/search/:keyword', async(req, res) => {
+    const keyword = req.params.keyword;
+    const response = await searchKeyword(keyword);
+    console.log(response);
+    res.json(response);
+})
+
+// GET - Load single item detail
+async function getItem(id) {
+    try {
+        await client.connect();
+        const collection = client.db('troyBoyDB').collection("items");
+        const query = {_id: ObjectId(id)};
+        const response = await collection.findOne(query);
+        return response;
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+app.get('/item/:id', async(req, res) => {
+    const id = req.params.id;
+    const response = await getItem(id);
+    // console.log(response);
+    res.json(response);
+})
+
+// GET - seller basic ingo (how many item sold and name)
+async function sellerBasic(id) {
+    try {
+        await client.connect();
+        const collection = client.db('troyBoyDB').collection("profile");
+        const query = {_id: ObjectId(id)};
+        const projection = {
+            lastName: 1,
+            firstName: 1,
+            itemsSold: 1
+        };
+        const response = await collection.findOne(query, {projection: projection});
+        // console.log(response);
+        return response;
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+app.get('/sellerBasic/:id', async (req, res)=>{
+    const id = req.params.id;
+    console.log(id);
+    const response = await sellerBasic(id);
+    console.log(response);
+    res.json(response);
+});
+
+// POST - create a new listing
+async function newListing(item) {
+    try {
+        await client.connect();
+        const collection = client.db('troyBoyDB').collection("items");
+        await collection.insertOne(item);
+        return item._id;
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+app.post('/newListing',jsonParser, async (req, res) => {
+    const item = req.body;
+    console.log(item);
+    const id = await newListing(item);
+    res.json(id);
+})
+
+app.listen(port, () => {
+	console.log('Listening on *:3000')
+})
