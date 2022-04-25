@@ -1,0 +1,59 @@
+    
+    /*BELOW IS THE CODE FOR THE CLOUD ANIMATIONS*/
+    body {
+        background: #a6bbc4;
+        color: #333;
+        font: 100% Arial, Sans Serif;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .list_container{
+        padding-top: 20px;
+    }
+    
+    #background-wrap {
+        bottom: 0;
+        left: 0;
+        padding-top: 50px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    *{
+        font-family: 'Space Mono', monospace;
+    }
+
+    #outside{
+        content: "";
+        display: table;
+        clear: both;
+        width: 60%;
+        height: 80%;
+    }
+    #container{
+        padding-top:20px;
+        float: left;
+        width: 40%;
+        padding: 10px;
+        height: 250px;
+        border-radius:20px;
+        background-color: white;
+        border: 1px solid;
+    }
+
+    #container2{
+        padding-top:20px;
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 500px;
+        border-radius:20px;
+        background-color: white;
+        border: 1px solid;
+    }
+    

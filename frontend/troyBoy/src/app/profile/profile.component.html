@@ -1,0 +1,61 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Codex</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="stylesheet" href="/app.component.css"/> -->
+  
+    <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&family=Poppins&family=Press+Start+2P&family=Red+Hat+Mono:wght@300&family=Source+Code+Pro:wght@200&family=Space+Mono&display=swap" rel="stylesheet">
+  <!-- <script src="frontend/dist/lab5/index.component.js"></script> -->
+</head>
+
+<body>
+
+    <div class="container flex-center" id="container">
+        <h2>Enter Profile Info</h2>
+        <div class="search-container col-md-5 col-sm-5">
+            <form method="GET" action="/create-user/:keyword">
+            <input name="keyword" type="text" class="form-control" id="createFirstName" placeholder="First Name">
+            <input name="createLastName" type="text" class="form-control" id="createLastName" placeholder="Last Name">
+            <input name="createEmail" type="text" class="form-control" id="createEmail" placeholder="Email">
+
+            <button type="submit" class="btn-enter" id="btn-enter" >Submit</button>   
+            </form>
+        </div>
+    </div>
+
+    <div class="container flex-center" id="container2" class="list_container">
+        <h2>My Order History</h2>
+
+        <div class="title-container">
+            <h6 class="name text-center" id="my_caption">Find Previous Orders and Sales Below</h6>
+            <hr class="seperator">
+        </div>
+
+        <div class="col-md-5 col-sm-5 pokemon-card" id="list_orders" class="list_orders" >
+            <p id="name_profile" class="first_name">{{first_name}}</p>
+            <p id="prevOrder" class="items_ordered">{{items_ordered}}</p>
+            <p id="prevSale" class="previous_sales">{{previous_sales}}</p>
+        </div>
+
+  
+        <div class="col attributes-content" style="min-width: 42%;">
+            <hr class="seperator">
+            <small class="text-muted">My Content</small>
+        </div>
+    </div>
+
+</body>
+
+
