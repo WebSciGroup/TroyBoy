@@ -30,7 +30,9 @@ typings install dt~jquery --global --save,
 npm install --save jquery
 
 **Frontend**: 
+
 in the tsconfig.spec.json file add "jquery" to typings[], 
+
 in the tsconfig.app.json file add "jquery" to typings[]
 
 ##  Portions where got stuck:
