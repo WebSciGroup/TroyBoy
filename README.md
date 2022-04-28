@@ -48,5 +48,7 @@ on the profile page. The typescript was not correctly populating the page with t
 so I had to resort to finding some ways that angular can specifically edit html elements. see the profile.html and .ts
 files. Now all of that portion of code is working and the last to touch up is some finishing css to match the theme better.
 
+Divya- portions where it got stuck:
 
+There were serious issues committing to Github and the login woudn't push with the rest of the files to Github. I completely redid the Oauth again from scratch yesterday by creating a new project in Angular and even then continued to run into technical difficulties today as well.
 
