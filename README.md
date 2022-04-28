@@ -57,3 +57,8 @@ Divya
 
 There were serious issues committing to Github and the login woudn't push with the rest of the files to Github. I completely redid the Oauth again from scratch yesterday by creating a new project in Angular and even then continued to run into technical difficulties today as well.
 
+
+Ayah
+
+For the comet chat api we ran into a couple issues pushing the code into one repo. We found issue with how the comet chat adata was stored due to the length of the file names and the file path. This caused our github to error multiple times, and despite working with multiple groupmates and teammembers we couldnt get it all into this repo. However, all of the chat is functional and supports many different features such as video call, image upload, and file upload. It worked by creating keys for all of hte users, and all of the data between chats is stored as well. Despite the trouble with github this portion of our porjject is fully implemented and working, as well as the bootstrap and css used to create the interface for troyboy marketplace.
+
