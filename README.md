@@ -8,24 +8,27 @@ can buy and sell goods within rpi domain.
 
 Roles:
 Divya- Work on the OAuth login
+
 Jialin- Work on homepage component and backend
+
 Ayah- Work on the chat api and frontend
+
 Chloe- Work on the profile component and backend
 
 Installation Instructions:
 
 in the backend folder:
-npm init -y
-npm install express
-npm i mongoose
-npm i body-parser
-npm install --save-dev @types/jquery
-npm install typings -g
-typings install dt~jquery --global --save
+npm init -y, 
+npm install express, 
+npm i mongoose, 
+npm i body-parser, 
+npm install --save-dev @types/jquery, 
+npm install typings -g, 
+typings install dt~jquery --global --save, 
 npm install --save jquery
 
 in the frontend folder: 
-in the tsconfig.spec.json file add "jquery" to typings[]
+in the tsconfig.spec.json file add "jquery" to typings[], 
 in the tsconfig.app.json file add "jquery" to typings[]
 
 
