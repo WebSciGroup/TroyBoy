@@ -1,6 +1,4 @@
-# TroyBoyAngularPartial
-TroyBoy Final Project
-Divya, Jialin, Ayah, Chloe
+# TroyBoy RPI Marketplace - *Divya, Jialin, Ayah, Chloe*
 4/27/2022
 
 Goal: To create a functioning marketplace where students 
@@ -23,22 +21,15 @@ can buy and sell goods within rpi domain.
 
 ## Installation Instructions:
 
-in the backend folder:
+**Backend**:
 
-npm init -y, 
+npm install
 
-npm install express, 
-
-npm i mongoose, 
-
-npm i body-parser, 
-
-npm install --save-dev @types/jquery, 
 npm install typings -g, 
 typings install dt~jquery --global --save, 
 npm install --save jquery
 
-in the frontend folder: 
+**Frontend**: 
 in the tsconfig.spec.json file add "jquery" to typings[], 
 in the tsconfig.app.json file add "jquery" to typings[]
 
